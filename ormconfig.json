@@ -1,0 +1,10 @@
+{
+  "type": "mysql",
+  "host": "llum-db.csxpzscqzgu5.eu-west-1.rds.amazonaws.com",
+  "port": 3306,
+  "username": "llum_admin",
+  "password": "z_eDKkz4rXcipM",
+  "database": "llum_db",
+  "entities": ["src/entities/**.entity{.ts,.js}"],
+  "synchronize": true
+}
