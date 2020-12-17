@@ -18,7 +18,11 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "docker:build": "docker build -t nestjs ."
+    "aws:login": "aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 076447134592.dkr.ecr.eu-west-1.amazonaws.com",
+    "docker:build": "docker build -t llum-nestjs .",
+    "docker:tag": "docker tag llum-nestjs:latest 076447134592.dkr.ecr.eu-west-1.amazonaws.com/llum-nestjs:latest",
+    "docker:push": "docker push 076447134592.dkr.ecr.eu-west-1.amazonaws.com/llum-nestjs:latest",
+    "aws:build": "npm run aws:login && npm run docker:build && npm run docker:tag && npm run docker:push"
   },
   "dependencies": {
     "@nestjs/common": "^6.7.2",

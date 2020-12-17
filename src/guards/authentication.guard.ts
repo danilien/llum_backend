@@ -1,4 +1,4 @@
-import { APIToken } from './../entities/token.entity';
+import { APIToken } from '../entities/token.entity';
 import {
   CanActivate,
   ExecutionContext,

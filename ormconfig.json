@@ -5,6 +5,6 @@
   "username": "llum_admin",
   "password": "z_eDKkz4rXcipM",
   "database": "llum_db",
-  "entities": ["src/entities/**.entity{.ts,.js}"],
+  "entities":  ["dist/**/*.entity{.ts,.js}"],
   "synchronize": true
 }
