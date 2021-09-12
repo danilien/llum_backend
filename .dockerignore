@@ -2,9 +2,6 @@ node_modules
 test
 dist
 .vscode
-.env
-.env-pro
-.env-stg
 .eslintrc.js
 .gitignore
 .npmrc

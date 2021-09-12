@@ -1,7 +1,7 @@
-import { ArPoint } from './entities/arpoint.entity';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm/dist/common/typeorm.decorators';
 import { Repository } from 'typeorm/repository/Repository';
+import { ArPoint } from './entities/arpoint.entity';
 
 @Injectable()
 export class AppService {

@@ -1,5 +1,5 @@
 {
-  "name": "dockerized-nestjs-production-app",
+  "name": "llum-bcn-21-backend",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -19,10 +19,11 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "aws:login": "aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 076447134592.dkr.ecr.eu-west-1.amazonaws.com",
-    "docker:build": "docker build -t llum-nestjs .",
+    "docker:build": "docker build -t llum-app .",
     "docker:tag": "docker tag llum-nestjs:latest 076447134592.dkr.ecr.eu-west-1.amazonaws.com/llum-nestjs:latest",
     "docker:push": "docker push 076447134592.dkr.ecr.eu-west-1.amazonaws.com/llum-nestjs:latest",
-    "aws:build": "npm run aws:login && npm run docker:build && npm run docker:tag && npm run docker:push"
+    "aws:build": "npm run aws:login && npm run docker:build && npm run docker:tag && npm run docker:push",
+    "aws:deploy": "aws ecs update-service --cluster llum-backend-cluster --service nestjs-service --force-new-deployment --region=us-west-1"
   },
   "dependencies": {
     "@nestjs/common": "^6.7.2",
@@ -39,7 +40,7 @@
     "typeorm": "^0.2.29"
   },
   "devDependencies": {
-    "@nestjs/cli": "^6.9.0",
+    "@nestjs/cli": "^7.6.0",
     "@nestjs/schematics": "^6.7.0",
     "@nestjs/testing": "^6.7.1",
     "@types/express": "^4.17.1",
